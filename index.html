@@ -265,8 +265,12 @@
 </footer>
 
 <script>
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+  function showAll(){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')});}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
+    document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+    setTimeout(showAll,1600);   /* failsafe: never leave content hidden */
+  } else { showAll(); }
 </script>
 </body>
 </html>
