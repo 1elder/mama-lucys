@@ -68,7 +68,9 @@
 
   .menu-note{text-align:center; font-family:var(--cond); text-transform:uppercase; letter-spacing:.06em; font-size:12px; color:var(--muted); margin-bottom:26px}
   .menu{display:grid; grid-template-columns:1fr 1fr; gap:12px 44px; max-width:900px; margin:0 auto}
-  .mi{display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px dashed var(--line)}
+  .mi{display:flex; align-items:center; gap:13px; padding:12px 0; border-bottom:1px dashed var(--line)}
+  .mi-thumb{width:60px; height:60px; border-radius:8px; object-fit:cover; flex:none; border:1px solid var(--line2)}
+  .mi .l{flex:1}
   .mi .l b{display:block; font-family:var(--cond); text-transform:uppercase; font-size:19px; letter-spacing:.02em}
   .mi .l span{font-size:13.5px; color:var(--muted)}
   .mi .pr{font-family:var(--disp); font-size:19px; color:var(--gold); white-space:nowrap}
@@ -180,14 +182,14 @@
     <div class="sec-h reveal"><div class="k">From the Pit</div><h2>The Board</h2></div>
     <p class="menu-note reveal">// Sample menu — we'll load Mama Lucy's real plates &amp; prices</p>
     <div class="menu">
-      <div class="mi reveal"><div class="l"><b>BBQ Rib Dinner</b><span>Two sides &amp; cornbread</span></div><div class="pr">$17</div></div>
-      <div class="mi reveal"><div class="l"><b>Fried Chicken Dinner</b><span>Two sides &amp; cornbread</span></div><div class="pr">$14</div></div>
-      <div class="mi reveal"><div class="l"><b>Smothered Pork Chops</b><span>Onion gravy, two sides</span></div><div class="pr">$15</div></div>
-      <div class="mi reveal"><div class="l"><b>Oxtails</b><span>Slow-cooked, rice &amp; gravy</span></div><div class="pr">$19</div></div>
-      <div class="mi reveal"><div class="l"><b>Rib Tips &amp; Links</b><span>Smoky, saucy, two sides</span></div><div class="pr">$14</div></div>
-      <div class="mi reveal"><div class="l"><b>Fried Whiting Fish</b><span>Cornmeal-crusted, two sides</span></div><div class="pr">$13</div></div>
-      <div class="mi reveal"><div class="l"><b>Mac &amp; Cheese</b><span>Baked, real cheese</span></div><div class="pr">$5</div></div>
-      <div class="mi reveal"><div class="l"><b>Peach Cobbler</b><span>The way to finish</span></div><div class="pr">$6</div></div>
+      <div class="mi reveal"><img class="mi-thumb" src="img/t-ribs.jpg" alt="BBQ ribs"><div class="l"><b>BBQ Rib Dinner</b><span>Two sides &amp; cornbread</span></div><div class="pr">$17</div></div>
+      <div class="mi reveal"><img class="mi-thumb" src="img/t-chicken.jpg" alt="Fried chicken"><div class="l"><b>Fried Chicken Dinner</b><span>Two sides &amp; cornbread</span></div><div class="pr">$14</div></div>
+      <div class="mi reveal"><img class="mi-thumb" src="img/t-porkchop.jpg" alt="Smothered pork chops"><div class="l"><b>Smothered Pork Chops</b><span>Onion gravy, two sides</span></div><div class="pr">$15</div></div>
+      <div class="mi reveal"><img class="mi-thumb" src="img/t-oxtail.jpg" alt="Oxtails"><div class="l"><b>Oxtails</b><span>Slow-cooked, rice &amp; gravy</span></div><div class="pr">$19</div></div>
+      <div class="mi reveal"><img class="mi-thumb" src="img/t-ribtips.jpg" alt="Rib tips and links"><div class="l"><b>Rib Tips &amp; Links</b><span>Smoky, saucy, two sides</span></div><div class="pr">$14</div></div>
+      <div class="mi reveal"><img class="mi-thumb" src="img/t-whiting.jpg" alt="Fried whiting fish"><div class="l"><b>Fried Whiting Fish</b><span>Cornmeal-crusted, two sides</span></div><div class="pr">$13</div></div>
+      <div class="mi reveal"><img class="mi-thumb" src="img/t-mac.jpg" alt="Mac and cheese"><div class="l"><b>Mac &amp; Cheese</b><span>Baked, real cheese</span></div><div class="pr">$5</div></div>
+      <div class="mi reveal"><img class="mi-thumb" src="img/t-cobbler.jpg" alt="Peach cobbler"><div class="l"><b>Peach Cobbler</b><span>The way to finish</span></div><div class="pr">$6</div></div>
     </div>
   </div>
 </section>
