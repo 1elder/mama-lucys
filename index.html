@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mama Lucy's Home Style Cooking · Miami</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Caveat:wght@600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+  :root{
+    --bg:#FBF3E4; --bg2:#F5E8D0; --card:#FFFDF8; --ink:#2A1A17; --soft:#6B4E45; --muted:#9A8578;
+    --berry:#8E2B34; --berry2:#A83842; --mustard:#E0A32E; --mustard2:#F0BD54; --green:#5E7146;
+    --line:rgba(42,26,23,.12); --shadow:0 16px 44px rgba(42,26,23,.12);
+    --disp:"DM Serif Display",Georgia,serif; --script:"Caveat",cursive; --body:"Hanken Grotesk",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg); color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 22px}
+  h1,h2,h3{font-family:var(--disp); font-weight:400; line-height:1.08}
+  a{color:inherit; text-decoration:none}
+  .btn{display:inline-block; font-weight:800; font-size:15px; padding:14px 26px; border-radius:999px; letter-spacing:.01em; transition:transform .15s ease, box-shadow .2s ease; cursor:pointer; border:0}
+  .btn-fill{background:linear-gradient(135deg,var(--berry),var(--berry2)); color:#fff; box-shadow:0 8px 24px rgba(142,43,52,.3)}
+  .btn-fill:hover{transform:translateY(-2px); box-shadow:0 12px 30px rgba(142,43,52,.42)}
+  .btn-gold{background:linear-gradient(135deg,var(--mustard),var(--mustard2)); color:#3a2600}
+  .btn-gold:hover{transform:translateY(-2px)}
+  .btn-out{border:2px solid var(--line); color:var(--ink); background:var(--card)}
+
+  nav{position:sticky; top:0; z-index:50; background:rgba(251,243,228,.9); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); height:70px; display:flex; align-items:center}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; width:100%}
+  .brand{display:flex; align-items:center; gap:10px; white-space:nowrap}
+  .brand .mark{width:42px; height:42px; border-radius:12px; background:linear-gradient(135deg,var(--berry),var(--mustard)); display:grid; place-items:center; font-family:var(--script); font-weight:700; color:#fff; font-size:26px; box-shadow:0 5px 14px rgba(142,43,52,.3)}
+  .brand b{font-family:var(--script); font-size:30px; font-weight:700; color:var(--berry); line-height:1}
+  .navlinks{display:flex; gap:26px; align-items:center; font-size:15px; color:var(--soft); font-weight:700}
+  .navlinks a:hover{color:var(--berry)}
+  .nav-cta{display:flex; gap:10px; align-items:center}
+
+  .hero{position:relative; padding:56px 0 66px; overflow:hidden}
+  .hero:before{content:""; position:absolute; inset:0; background:radial-gradient(50% 46% at 88% 10%, rgba(224,163,46,.28), transparent 66%)}
+  .hero .wrap{position:relative; display:grid; grid-template-columns:1.02fr .98fr; gap:44px; align-items:center}
+  .eyebrow{display:inline-flex; gap:8px; align-items:center; font-size:13px; letter-spacing:.02em; color:var(--berry); font-weight:800; background:#F7E3C9; border:1px solid rgba(224,163,46,.4); padding:8px 15px; border-radius:999px}
+  .hero h1{font-size:clamp(40px,6.2vw,68px); margin:18px 0 8px}
+  .hero h1 .em{font-family:var(--script); color:var(--berry); font-size:1.15em}
+  .hero p.lead{font-size:clamp(17px,2.2vw,20px); color:var(--soft); max-width:520px; margin:12px 0 24px; font-weight:500}
+  .hero .cta-row{display:flex; gap:12px; flex-wrap:wrap}
+  .hero .stars{margin-top:20px; font-size:14.5px; color:var(--muted); font-weight:700}
+  .hero .stars b{color:var(--mustard)}
+  .hero-img{border-radius:24px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow)}
+  .hero-img img{width:100%; height:100%; max-height:440px; object-fit:cover; display:block}
+
+  .strip{background:var(--berry); color:#fff; padding:22px 0}
+  .strip .wrap{display:flex; gap:20px; justify-content:space-between; flex-wrap:wrap; text-align:center}
+  .strip .it{flex:1; min-width:130px}
+  .strip .it b{font-family:var(--disp); font-size:26px; display:block; color:var(--mustard2)}
+  .strip .it span{font-size:12.5px; opacity:.9; font-weight:600}
+
+  section{padding:72px 0}
+  .sec-h{text-align:center; max-width:640px; margin:0 auto 44px}
+  .sec-h .k{font-family:var(--script); font-size:24px; color:var(--berry); font-weight:700}
+  .sec-h h2{font-size:clamp(30px,5vw,46px); margin:2px 0 12px}
+  .sec-h p{color:var(--soft); font-size:16.5px}
+
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  .vc{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:28px 24px; box-shadow:var(--shadow)}
+  .vc .ic{width:54px; height:54px; border-radius:15px; background:#F7E3C9; display:grid; place-items:center; font-size:26px; margin-bottom:15px}
+  .vc h3{font-size:22px; margin-bottom:8px}
+  .vc p{color:var(--soft); font-size:15px}
+
+  .menu-note{text-align:center; font-size:13px; color:var(--muted); margin-bottom:26px; font-style:italic}
+  .menu{display:grid; grid-template-columns:1fr 1fr; gap:12px 44px; max-width:900px; margin:0 auto}
+  .mi{display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px dashed var(--line)}
+  .mi .l b{display:block; font-family:var(--disp); font-size:19px}
+  .mi .l span{font-size:13.5px; color:var(--muted)}
+  .mi .pr{font-family:var(--disp); font-size:19px; color:var(--berry); white-space:nowrap}
+
+  .catering{background:linear-gradient(160deg,#2A1A17,#3A241F); color:#fff}
+  .cat-grid{display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center}
+  .cat-copy .k{font-family:var(--script); font-size:24px; color:var(--mustard2); font-weight:700}
+  .cat-copy h2{font-size:clamp(30px,4.6vw,46px); margin:2px 0 14px}
+  .cat-copy p{color:#E8D9C8; margin-bottom:14px; font-size:16px}
+  .cat-copy .list{list-style:none; margin:10px 0 22px}
+  .cat-copy .list li{padding:6px 0 6px 26px; position:relative; color:#E8D9C8}
+  .cat-copy .list li:before{content:"✦"; position:absolute; left:0; color:var(--mustard)}
+  .cat-photo{border-radius:22px; overflow:hidden; border:1px solid rgba(255,255,255,.15); box-shadow:var(--shadow)}
+  .cat-photo img{width:100%; height:100%; max-height:420px; object-fit:cover; display:block}
+
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .gtile{position:relative; aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow)}
+  .gtile img{width:100%; height:100%; object-fit:cover; display:block}
+  .gtile span{position:absolute; left:0; right:0; bottom:0; padding:16px; font-family:var(--disp); font-size:18px; color:#fff; background:linear-gradient(180deg,transparent,rgba(0,0,0,.6))}
+
+  .about{display:grid; grid-template-columns:.85fr 1.15fr; gap:46px; align-items:center}
+  .about .big-card{background:linear-gradient(160deg,var(--mustard),var(--mustard2)); border-radius:24px; padding:44px 30px; text-align:center; box-shadow:var(--shadow)}
+  .about .big-card .num{font-family:var(--disp); font-size:66px; line-height:1; color:#3a2600}
+  .about .big-card .lbl{font-weight:800; color:#4a3200; margin-top:6px}
+  .about h2{font-size:clamp(28px,4.5vw,42px); margin-bottom:14px}
+  .about p{color:var(--soft); margin-bottom:14px}
+
+  .visit{background:var(--bg2)}
+  .visit-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px}
+  .vcard{background:var(--card); border:1px solid var(--line); border-radius:22px; padding:32px 28px; box-shadow:var(--shadow)}
+  .vcard h3{font-size:24px; margin-bottom:14px}
+  .vcard .row{display:flex; gap:12px; padding:9px 0; font-size:15.5px; color:var(--soft); font-weight:500}
+  .vcard .row .i{flex:none; color:var(--berry)}
+  .hours div{display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--line); font-size:15px; color:var(--soft)}
+  .hours div b{color:var(--ink); font-weight:800}
+
+  .fcta{text-align:center; padding:80px 0; background:radial-gradient(60% 100% at 50% 0%, rgba(224,163,46,.24), transparent 70%)}
+  .fcta .k{font-family:var(--script); font-size:26px; color:var(--berry); font-weight:700}
+  .fcta h2{font-size:clamp(32px,5.5vw,50px); margin:2px 0 14px}
+  .fcta p{color:var(--soft); max-width:520px; margin:0 auto 24px; font-size:17px}
+  footer{border-top:1px solid var(--line); padding:30px 0; text-align:center; color:var(--muted); font-size:13.5px}
+  footer .built{margin-top:10px; font-size:12px; opacity:.85}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1; transform:none}
+
+  @media(max-width:860px){
+    nav{height:auto; min-height:62px; padding:8px 0}
+    .navlinks{display:none}
+    .nav-cta .btn-out{display:none}
+    .hero .wrap{grid-template-columns:1fr; gap:28px}
+    .grid3{grid-template-columns:1fr}
+    .menu{grid-template-columns:1fr; gap:0}
+    .cat-grid{grid-template-columns:1fr; gap:26px}
+    .cat-photo{order:-1}
+    .gallery{grid-template-columns:1fr 1fr}
+    .about{grid-template-columns:1fr; gap:26px}
+    .visit-grid{grid-template-columns:1fr; gap:22px}
+    section{padding:54px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mark">M</span><b>Mama Lucy's</b></a>
+    <div class="navlinks">
+      <a href="#menu">Menu</a><a href="#catering">Catering</a><a href="#visit">Visit</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-out" href="tel:3056878782">Call</a>
+      <a class="btn btn-fill" href="#order">Order Now</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">🍗 Soul Food &amp; BBQ · Miami</span>
+      <h1>Cooking like <span class="em">Mama</span> used to make.</h1>
+      <p class="lead">Fall-off-the-bone ribs, golden fried chicken, mac &amp; cheese, greens and cornbread — real home-style plates that keep Miami coming back.</p>
+      <div class="cta-row">
+        <a class="btn btn-fill" href="#order">Order Now</a>
+        <a class="btn btn-out" href="#menu">See the Menu</a>
+      </div>
+      <div class="stars">★★★★ <b>4.2</b> · 888+ reviews on Google · a Miami favorite</div>
+    </div>
+    <div class="hero-img"><img src="img/hero.jpg" alt="Soul food and BBQ plate — ribs, mac and cheese, greens, cornbread"></div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="it"><b>888+</b><span>5-star neighbors</span></div>
+    <div class="it"><b>Home-style</b><span>Made fresh daily</span></div>
+    <div class="it"><b>Catering</b><span>Events big &amp; small</span></div>
+    <div class="it"><b>Miami</b><span>NW 119th St</span></div>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <div class="k">Order straight from us</div>
+      <h2>Keep the flavor, skip the fees</h2>
+      <p>The delivery apps take 20–30% off every plate. Order direct and that stays in the kitchen — bigger portions and better plates for you.</p>
+    </div>
+    <div class="grid3">
+      <div class="vc reveal"><div class="ic">🍳</div><h3>Made fresh</h3><p>Ribs smoked, chicken fried, greens simmered — cooked to order the old-fashioned way.</p></div>
+      <div class="vc reveal"><div class="ic">🎉</div><h3>We cater</h3><p>Repasts, church events, birthdays, parties — Mama Lucy's feeds a crowd. Ask us.</p></div>
+      <div class="vc reveal"><div class="ic">📞</div><h3>Order in seconds</h3><p>Call ahead or order online — hot and ready when you pull up, no third-party markup.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="k">The plates</div><h2>What's cooking</h2></div>
+    <p class="menu-note reveal">Sample menu shown — we'll build it out with Mama Lucy's real dishes &amp; prices.</p>
+    <div class="menu">
+      <div class="mi reveal"><div class="l"><b>BBQ Rib Dinner</b><span>Two sides &amp; cornbread</span></div><div class="pr">$17</div></div>
+      <div class="mi reveal"><div class="l"><b>Fried Chicken Dinner</b><span>Two sides &amp; cornbread</span></div><div class="pr">$14</div></div>
+      <div class="mi reveal"><div class="l"><b>Smothered Pork Chops</b><span>Onion gravy, two sides</span></div><div class="pr">$15</div></div>
+      <div class="mi reveal"><div class="l"><b>Oxtails</b><span>Slow-cooked, rice &amp; gravy</span></div><div class="pr">$19</div></div>
+      <div class="mi reveal"><div class="l"><b>Fried Whiting Fish</b><span>Cornmeal-crusted, two sides</span></div><div class="pr">$13</div></div>
+      <div class="mi reveal"><div class="l"><b>Mac &amp; Cheese</b><span>Baked, real cheese</span></div><div class="pr">$5</div></div>
+      <div class="mi reveal"><div class="l"><b>Collard Greens</b><span>Slow-simmered, smoky</span></div><div class="pr">$5</div></div>
+      <div class="mi reveal"><div class="l"><b>Peach Cobbler</b><span>The way to finish</span></div><div class="pr">$6</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="catering" class="catering">
+  <div class="wrap cat-grid">
+    <div class="cat-copy reveal">
+      <div class="k">Let Mama feed your event</div>
+      <h2>Catering for a crowd</h2>
+      <p>888 people didn't fall in love with a plate by accident. When it's time to feed a whole room, Mama Lucy's brings the same home cooking — by the tray.</p>
+      <ul class="list">
+        <li>Repasts &amp; family gatherings</li>
+        <li>Church events &amp; fellowships</li>
+        <li>Birthdays, reunions &amp; parties</li>
+        <li>Office lunches &amp; large orders</li>
+      </ul>
+      <a class="btn btn-gold" href="#order">Ask About Catering</a>
+    </div>
+    <div class="cat-photo reveal"><img src="img/g2.jpg" alt="BBQ ribs platter for catering"></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="k">Straight from the kitchen</div><h2>A taste of Mama's</h2></div>
+    <div class="gallery reveal">
+      <div class="gtile"><img src="img/g1.jpg" alt="Fried chicken plate"><span>Golden fried chicken</span></div>
+      <div class="gtile"><img src="img/g2.jpg" alt="BBQ ribs"><span>Fall-off-the-bone ribs</span></div>
+      <div class="gtile"><img src="img/g3.jpg" alt="Peach cobbler"><span>Peach cobbler</span></div>
+    </div>
+    <p class="menu-note reveal" style="margin-top:22px">Sample photos — we'll shoot Mama Lucy's real plates.</p>
+  </div>
+</section>
+
+<section id="about" style="background:var(--bg2)">
+  <div class="wrap about">
+    <div class="big-card reveal">
+      <div class="num">888+</div>
+      <div class="lbl">five-star reviews</div>
+    </div>
+    <div class="reveal">
+      <div class="sec-h" style="text-align:left;margin:0 0 8px"><div class="k">Our story</div></div>
+      <h2>A Miami tradition, one plate at a time.</h2>
+      <p>Mama Lucy's has been serving Miami the food that feels like home — recipes passed down, cooked with love, and plated generous. No shortcuts, no frozen anything.</p>
+      <p>Nearly 900 neighbors have made us part of their table. Come see why.</p>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="visit">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="k">Come on by</div><h2>Find us &amp; order</h2></div>
+    <div class="visit-grid">
+      <div class="vcard reveal" id="order">
+        <h3>Visit / Order</h3>
+        <div class="row"><span class="i">📍</span> 2201 NW 119th St, Miami, FL 33167</div>
+        <div class="row"><span class="i">📞</span> <a href="tel:3056878782">(305) 687-8782</a></div>
+        <div class="row"><span class="i">🎉</span> Catering &amp; large orders welcome</div>
+        <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-fill" href="tel:3056878782">Call to Order</a>
+          <a class="btn btn-out" href="#menu">View Menu</a>
+        </div>
+      </div>
+      <div class="vcard reveal">
+        <h3>Hours</h3>
+        <div class="hours">
+          <div><span>Mon – Thu</span><b>11am – 8pm</b></div>
+          <div><span>Fri – Sat</span><b>11am – 9pm</b></div>
+          <div><span>Sunday</span><b>12pm – 6pm</b></div>
+        </div>
+        <p class="menu-note" style="margin-top:12px">Sample hours — we'll set your real ones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fcta">
+  <div class="wrap reveal">
+    <div class="k">Pull up a chair</div>
+    <h2>Come taste home cooking.</h2>
+    <p>Order direct, keep it in the kitchen, and eat like Sunday dinner any day of the week.</p>
+    <a class="btn btn-fill" href="tel:3056878782">Order Now</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Mama Lucy's Home Style Cooking · 2201 NW 119th St, Miami FL 33167 · (305) 687-8782
+    <div class="built">Concept site by Story Digital · sample menu, photos &amp; hours shown for demonstration</div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+</script>
+</body>
+</html>
